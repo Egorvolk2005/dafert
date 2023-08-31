@@ -1,0 +1,66 @@
+{% block content %}  
+ 
+
+  <title>{{ title }}</title> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <div class="background-image"> 
+    <a href='{% url "index" %}'><i class="fa fa-home"></i>Home</a>   
+    <br><br>  
+    {% if form %}  
+      <form action="{{ registrations }}" method="post">  
+        {% csrf_token %}  
+        {{ form.as_p }}  
+        <button type="submit">Sign In</button>  
+        
+      </form>  
+    {% endif %}  
+    {{ message }}  
+    <br><br> 
+ 
+  </div> 
+
+ 
+<style> 
+  .background-image {  
+    background-image: url("https://avatars.mds.yandex.net/i?id=592eff508200f71535b8d77df189e43030f62661-8819379-images-thumbs&n=13");  
+    background-repeat: no-repeat;  
+    background-size: cover;  
+    background-position: center;  
+    height: 100vh;   
+    display: flex;   
+    justify-content: center;  
+    align-items: center;  
+  }  
+
+  form {  
+    background-color: white;  
+    padding: 20px;  
+    border-radius: 10px;  
+  }  
+
+  button {  
+    background-color: #4CAF50;  
+    color: white;  
+    padding: 10px 20px;  
+    border: none;  
+    border-radius: 5px;  
+    cursor: pointer;    
+  }  
+
+  button:hover {  
+    background-color: #3e8e41;  
+  }  
+
+  a {  
+    color: white;  
+    text-decoration: none;  
+    background-color: #4CAF50;  
+    padding: 10px 20px;  
+    border-radius: 5px;  
+  }  
+
+  a:hover {  
+    text-decoration: underline;  
+  }  
+</style>
+{% endblock %} 

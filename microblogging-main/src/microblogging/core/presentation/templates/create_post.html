@@ -1,0 +1,9 @@
+{% extends "base.html" %} 
+{% block content %}
+<h1>Создать твит</h1>
+<form method="post">
+
+{{ form.as_p }} {# отображаем форму в виде абзацев #}
+<button type="submit">Опубликовать</button>
+</form>
+{% endblock %}
